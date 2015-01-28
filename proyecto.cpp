@@ -1,7 +1,7 @@
 #include <fstream>
 #include <iostream>
 //******************************************************************************
-//Funci�n que muestra el men�
+//Función que muestra el menú
 //******************************************************************************
 int menu(){
 	clrscr();
@@ -16,3 +16,19 @@ int menu(){
    return op;
 }
 
+
+//******************************************************************************
+//Función que genera tablas de verdad con 2 entradas
+//******************************************************************************
+void generarTablas2Entradas(){
+	clrscr();
+	cout<<"GENERAR TABLAS CON DOS ENTRADAS";
+}
+
+//******************************************************************************
+//Función que permite ver tablas de verdad con 2 entradas
+//******************************************************************************
+void verTablas2Entradas(){
+	clrscr();
+	cout<<"VER TABLAS CON DOS ENTRADAS";
+}
