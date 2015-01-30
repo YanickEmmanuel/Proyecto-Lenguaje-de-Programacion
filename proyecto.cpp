@@ -509,3 +509,70 @@ bool existe(){
     	return 0;
     }
 }
+//Función que permite ver tablas de verdad con 2 entradas
+
+void verTablas2Entradas(){
+	clrscr();
+   if(existe()==1){
+	   char cadena[128];
+	   ifstream fe("nombre.txt");
+  	   fe.getline(cadena, 128);
+		if(strcmp(cadena,"2ENTRADAS")==0){
+      	cout<<"TABLAS DE VERDAD CON DOS ENTRADAS"<<endl;
+         cout<<"*********************************"<<endl;
+		   while(!fe.eof()) {
+   		   fe.getline(cadena, 128);
+      		cout << cadena << endl;
+         }
+		}
+      else{
+	      char op;
+   		cout<<"Las tablas no estan generadas, desea crearlas? (s/n)"; cin>>op;
+      	if (op=='s')
+	       {
+          fe.close();
+          generarTablas2Entradas();
+          }
+      }
+   	fe.close();
+   }
+   else{
+   	char op;
+   	cout<<"Las tablas no estan generadas, desea crearlas? (s/n)"; cin>>op;
+      if (op=='s')
+      	generarTablas2Entradas();
+   }
+}
+
+
+//Función que realiza una acción según un valor ingresado
+
+void realizarAccion(int op){
+	switch(op){
+   	case 1:
+      	generarTablas2Entradas();
+         getch();
+         break;
+
+      case 2:
+      	verTablas2Entradas();
+         getch();
+         break;
+
+      case 3:
+      	verGenerarTablasNEntradas();
+         getch();
+         break;
+   }
+}
+
+
+//Función principal
+
+void main(){
+   int opcion=0;
+	while (opcion!=4){
+		opcion=menu();
+   	realizarAccion(opcion);
+   }
+}
